@@ -10,4 +10,4 @@ EXPOSE 80
 
 ENV FLASK_APP=app.py
 
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:80", "app:app"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:80", "app:app"]
