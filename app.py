@@ -9,11 +9,8 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/rembg', methods=['GET', 'POST'])
+@app.route('/rembg', methods=['POST'])
 def remove_background():
-    if request.method == 'GET':
-        return 'Send a POST request'
-
     if 'image' not in request.files:
         return 'No file part', 400
 
@@ -39,5 +36,5 @@ def remove_background():
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 7000))
+    port = int(os.environ.get('PORT', 8000))
     app.run(debug=True, host='0.0.0.0', port=port)
