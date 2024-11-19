@@ -6,8 +6,8 @@ COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 80
+EXPOSE 9000
 
 ENV FLASK_APP=app.py
 
-CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:80", "app:app"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:9000", "app:app"]
