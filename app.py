@@ -9,7 +9,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/rembg', methods=['POST'])
+@app.route('/rembg', methods=['GET'])
 def remove_background():
     if 'image' not in request.files:
         return 'No file part', 400
